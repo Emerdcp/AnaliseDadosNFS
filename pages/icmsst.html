@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ICMS-ST</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <h2>Nota ICMS-ST</h2>
+    <button onclick="voltar()">⬅ Voltar</button>
+
+    <!-- CONFIG -->
+    <div class="config">
+        <input placeholder="Desconto Total" id="desconto" oninput="calcularTotal()">
+        <input placeholder="Frete Total" id="frete" oninput="calcularTotal()">
+        <input placeholder="ICMS Interno (%)" id="icmsInterno" oninput="calcularTotal()">
+        <input placeholder="FCP (%)" id="fcp" oninput="calcularTotal()">
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Seq</th>
+                <th>Qtd</th>
+                <th>Preço</th>
+                <th>ICMS%</th>
+                <th>IPI%</th>
+                <th>PIS%</th>
+                <th>Cofins%</th>
+                <th>MVA%</th>
+
+                <th>Frete</th>
+                <th>Desc</th>
+                <th>Base Ajustada</th>
+
+                <th>Base</th>
+                <th>ICMS</th>
+                <th>IPI</th>
+                <th>PIS</th>
+                <th>Cofins</th>
+
+                <th>Base ST</th>
+                <th>ST</th>
+                <th>FCP</th>
+            </tr>
+        </thead>
+
+        <tbody id="tabelaItens"></tbody>
+    </table>
+
+    <button onclick="adicionarItem()">+ Adicionar Item</button>
+
+    <!-- TOTAL -->
+    <div class="total-box">
+        <h3>Total Nota</h3>
+        <p id="totalNota">R$ 0,00</p>
+    </div>
+
+    <div class="resumo">
+
+        <div>PIS: <span id="totalPIS">0</span></div>
+        <div>Cofins: <span id="totalCofins">0</span></div>
+        <div>ICMS: <span id="totalICMS">0</span></div>
+        <div>IPI: <span id="totalIPI">0</span></div>
+        <div>ST: <span id="totalST">0</span></div>
+        <div>FCP: <span id="totalFCP">0</span></div>
+
+        <div class="total-final">
+            Total Nota: <span id="totalNotaResumo">0</span>
+        </div>
+
+    </div>
+
+    <script src="icmsst.js"></script>
+</body>
+
+</html>
